@@ -113,18 +113,26 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color all-classes-table-tab2 all-classes-table">
 <div class="block">Utility class for loading/caching <code>Encoder/Decoder</code> providers.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/BodyCollector.html" title="class in com.github.mizosoft.methanol.testutils">BodyCollector</a></div>
+<div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/adapter/BodyAdapterVerifier.html" title="class in com.github.mizosoft.methanol.testutils.adapter">BodyAdapterVerifier</a>&lt;<a href="methanol.testutils/com/github/mizosoft/methanol/testutils/adapter/BodyAdapterVerifier.html" title="type parameter in BodyAdapterVerifier">A</a> extends <a href="methanol/com/github/mizosoft/methanol/BodyAdapter.html" title="interface in com.github.mizosoft.methanol">BodyAdapter</a>,&#8203;<a href="methanol.testutils/com/github/mizosoft/methanol/testutils/adapter/BodyAdapterVerifier.html" title="type parameter in BodyAdapterVerifier">VERIFIER</a> extends <a href="methanol.testutils/com/github/mizosoft/methanol/testutils/adapter/BodyAdapterVerifier.html" title="class in com.github.mizosoft.methanol.testutils.adapter">BodyAdapterVerifier</a>&lt;<a href="methanol.testutils/com/github/mizosoft/methanol/testutils/adapter/BodyAdapterVerifier.html" title="type parameter in BodyAdapterVerifier">A</a>,&#8203;<a href="methanol.testutils/com/github/mizosoft/methanol/testutils/adapter/BodyAdapterVerifier.html" title="type parameter in BodyAdapterVerifier">VERIFIER</a>&gt;&gt;</div>
 <div class="col-last odd-row-color all-classes-table-tab2 all-classes-table">
+<div class="block">A small DSL for testing <a href="methanol/com/github/mizosoft/methanol/BodyAdapter.html" title="interface in com.github.mizosoft.methanol"><code>BodyAdapter</code></a> implementations.</div>
+</div>
+<div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/BodyCollector.html" title="class in com.github.mizosoft.methanol.testutils">BodyCollector</a></div>
+<div class="col-last even-row-color all-classes-table-tab2 all-classes-table">
 <div class="block">Collects BodyPublisher's content.</div>
 </div>
-<div class="col-first even-row-color all-classes-table-tab1 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/BodyDecoder.html" title="interface in com.github.mizosoft.methanol">BodyDecoder</a>&lt;<a href="methanol/com/github/mizosoft/methanol/BodyDecoder.html" title="type parameter in BodyDecoder">T</a>&gt;</div>
-<div class="col-last even-row-color all-classes-table-tab1 all-classes-table">
+<div class="col-first odd-row-color all-classes-table-tab1 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/BodyDecoder.html" title="interface in com.github.mizosoft.methanol">BodyDecoder</a>&lt;<a href="methanol/com/github/mizosoft/methanol/BodyDecoder.html" title="type parameter in BodyDecoder">T</a>&gt;</div>
+<div class="col-last odd-row-color all-classes-table-tab1 all-classes-table">
 <div class="block">A <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.net.http/java/net/http/HttpResponse.BodySubscriber.html" title="class or interface in java.net.http" class="external-link"><code>HttpResponse.BodySubscriber</code></a> that decodes the response body for consumption by a downstream
  subscriber.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table-tab1 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/BodyDecoder.Factory.html" title="interface in com.github.mizosoft.methanol">BodyDecoder.Factory</a></div>
-<div class="col-last odd-row-color all-classes-table-tab1 all-classes-table">
+<div class="col-first even-row-color all-classes-table-tab1 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/BodyDecoder.Factory.html" title="interface in com.github.mizosoft.methanol">BodyDecoder.Factory</a></div>
+<div class="col-last even-row-color all-classes-table-tab1 all-classes-table">
 <div class="block">A factory of <code>BodyDecoders</code> for some defined encoding.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/BodyPublisherVerifier.html" title="class in com.github.mizosoft.methanol.testutils">BodyPublisherVerifier</a></div>
+<div class="col-last odd-row-color all-classes-table-tab2 all-classes-table">
+<div class="block">A small DSL for testing <code>BodyPublisher</code> implementations.</div>
 </div>
 <div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.brotli/com/github/mizosoft/methanol/brotli/internal/BrotliBodyDecoderFactory.html" title="class in com.github.mizosoft.methanol.brotli.internal">BrotliBodyDecoderFactory</a></div>
 <div class="col-last even-row-color all-classes-table-tab2 all-classes-table">
@@ -199,6 +207,16 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color all-classes-table-tab2 all-classes-table">
 <div class="block">Utility class for finding decoder factories.</div>
 </div>
+<div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/adapter/DecoderVerifier.html" title="class in com.github.mizosoft.methanol.testutils.adapter">DecoderVerifier</a></div>
+<div class="col-last odd-row-color all-classes-table-tab2 all-classes-table">
+<div class="block">A small DSL for testing <a href="methanol/com/github/mizosoft/methanol/BodyAdapter.Decoder.html" title="interface in com.github.mizosoft.methanol"><code>BodyAdapter.Decoder</code></a> implementations.</div>
+</div>
+<div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/adapter/DecoderVerifier.BodyConversionStep.html" title="class in com.github.mizosoft.methanol.testutils.adapter">DecoderVerifier.BodyConversionStep</a>&lt;<a href="methanol.testutils/com/github/mizosoft/methanol/testutils/adapter/DecoderVerifier.BodyConversionStep.html" title="type parameter in DecoderVerifier.BodyConversionStep">T</a>&gt;</div>
+<div class="col-last even-row-color all-classes-table-tab2 all-classes-table">&nbsp;</div>
+<div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/adapter/DecoderVerifier.BodySubscriberVerifier.html" title="class in com.github.mizosoft.methanol.testutils.adapter">DecoderVerifier.BodySubscriberVerifier</a>&lt;<a href="methanol.testutils/com/github/mizosoft/methanol/testutils/adapter/DecoderVerifier.BodySubscriberVerifier.html" title="type parameter in DecoderVerifier.BodySubscriberVerifier">T</a>&gt;</div>
+<div class="col-last odd-row-color all-classes-table-tab2 all-classes-table">&nbsp;</div>
+<div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/adapter/DecoderVerifier.SupplierVerifier.html" title="class in com.github.mizosoft.methanol.testutils.adapter">DecoderVerifier.SupplierVerifier</a>&lt;<a href="methanol.testutils/com/github/mizosoft/methanol/testutils/adapter/DecoderVerifier.SupplierVerifier.html" title="type parameter in DecoderVerifier.SupplierVerifier">T</a>&gt;</div>
+<div class="col-last even-row-color all-classes-table-tab2 all-classes-table">&nbsp;</div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab6"><a href="methanol/com/github/mizosoft/methanol/internal/annotations/DefaultProvider.html" title="annotation in com.github.mizosoft.methanol.internal.annotations">DefaultProvider</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab6">
 <div class="block">Identifies a provider from this module as default so that it can be overridden by user providers
@@ -230,7 +248,13 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color all-classes-table-tab2 all-classes-table">
 <div class="block">A publisher that completes subscribers immediately.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/FailedPublisher.html" title="class in com.github.mizosoft.methanol.testutils">FailedPublisher</a>&lt;<a href="methanol.testutils/com/github/mizosoft/methanol/testutils/FailedPublisher.html" title="type parameter in FailedPublisher">T</a>&gt;</div>
+<div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/adapter/EncoderVerifier.html" title="class in com.github.mizosoft.methanol.testutils.adapter">EncoderVerifier</a></div>
+<div class="col-last odd-row-color all-classes-table-tab2 all-classes-table">
+<div class="block">A small DSL for testing <a href="methanol/com/github/mizosoft/methanol/BodyAdapter.Encoder.html" title="interface in com.github.mizosoft.methanol"><code>BodyAdapter.Encoder</code></a> implementations.</div>
+</div>
+<div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/adapter/EncoderVerifier.ObjectConversionStep.html" title="class in com.github.mizosoft.methanol.testutils.adapter">EncoderVerifier.ObjectConversionStep</a>&lt;<a href="methanol.testutils/com/github/mizosoft/methanol/testutils/adapter/EncoderVerifier.ObjectConversionStep.html" title="type parameter in EncoderVerifier.ObjectConversionStep">T</a>&gt;</div>
+<div class="col-last even-row-color all-classes-table-tab2 all-classes-table">&nbsp;</div>
+<div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/FailingPublisher.html" title="class in com.github.mizosoft.methanol.testutils">FailingPublisher</a>&lt;<a href="methanol.testutils/com/github/mizosoft/methanol/testutils/FailingPublisher.html" title="type parameter in FailingPublisher">T</a>&gt;</div>
 <div class="col-last odd-row-color all-classes-table-tab2 all-classes-table">
 <div class="block">A publisher that fails immediately with an error.</div>
 </div>
@@ -249,19 +273,25 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/io/file/ForwardingAsynchronousFileChannel.html" title="class in com.github.mizosoft.methanol.testutils.io.file">ForwardingAsynchronousFileChannel</a></div>
 <div class="col-last odd-row-color all-classes-table-tab2 all-classes-table">&nbsp;</div>
-<div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/flow/ForwardingBodyPublisher.html" title="class in com.github.mizosoft.methanol.internal.flow">ForwardingBodyPublisher</a></div>
-<div class="col-last even-row-color all-classes-table-tab2 all-classes-table">&nbsp;</div>
-<div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/flow/ForwardingBodySubscriber.html" title="class in com.github.mizosoft.methanol.internal.flow">ForwardingBodySubscriber</a>&lt;<a href="methanol/com/github/mizosoft/methanol/internal/flow/ForwardingBodySubscriber.html" title="type parameter in ForwardingBodySubscriber">T</a>&gt;</div>
-<div class="col-last odd-row-color all-classes-table-tab2 all-classes-table">
+<div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/adapter/ForwardingBodyAdapter.html" title="class in com.github.mizosoft.methanol.adapter">ForwardingBodyAdapter</a></div>
+<div class="col-last even-row-color all-classes-table-tab2 all-classes-table">
+<div class="block">A <a href="methanol/com/github/mizosoft/methanol/BodyAdapter.html" title="interface in com.github.mizosoft.methanol"><code>BodyAdapter</code></a> that forwards calls to another.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/flow/ForwardingBodyPublisher.html" title="class in com.github.mizosoft.methanol.internal.flow">ForwardingBodyPublisher</a></div>
+<div class="col-last odd-row-color all-classes-table-tab2 all-classes-table">&nbsp;</div>
+<div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/flow/ForwardingBodySubscriber.html" title="class in com.github.mizosoft.methanol.internal.flow">ForwardingBodySubscriber</a>&lt;<a href="methanol/com/github/mizosoft/methanol/internal/flow/ForwardingBodySubscriber.html" title="type parameter in ForwardingBodySubscriber">T</a>&gt;</div>
+<div class="col-last even-row-color all-classes-table-tab2 all-classes-table">
 <div class="block">A <code>BodySubscriber&lt;T&gt;</code> forwarding to another <code>BodySubscriber&lt;T&gt;</code>.</div>
 </div>
-<div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/io/file/ForwardingDirectoryStream.html" title="class in com.github.mizosoft.methanol.testutils.io.file">ForwardingDirectoryStream</a>&lt;<a href="methanol.testutils/com/github/mizosoft/methanol/testutils/io/file/ForwardingDirectoryStream.html" title="type parameter in ForwardingDirectoryStream">T</a>&gt;</div>
-<div class="col-last even-row-color all-classes-table-tab2 all-classes-table">&nbsp;</div>
+<div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/adapter/ForwardingDecoder.html" title="class in com.github.mizosoft.methanol.adapter">ForwardingDecoder</a></div>
+<div class="col-last odd-row-color all-classes-table-tab2 all-classes-table">
+<div class="block">A <a href="methanol/com/github/mizosoft/methanol/BodyAdapter.Decoder.html" title="interface in com.github.mizosoft.methanol"><code>BodyAdapter.Decoder</code></a> that forwards calls to another.</div>
+</div>
+<div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/adapter/ForwardingEncoder.html" title="class in com.github.mizosoft.methanol.adapter">ForwardingEncoder</a></div>
+<div class="col-last even-row-color all-classes-table-tab2 all-classes-table">
+<div class="block">An <a href="methanol/com/github/mizosoft/methanol/BodyAdapter.Encoder.html" title="interface in com.github.mizosoft.methanol"><code>BodyAdapter.Encoder</code></a> that forwards calls to another.</div>
+</div>
 <div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/io/file/ForwardingFileChannel.html" title="class in com.github.mizosoft.methanol.testutils.io.file">ForwardingFileChannel</a></div>
-<div class="col-last odd-row-color all-classes-table-tab2 all-classes-table">&nbsp;</div>
-<div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/io/file/ForwardingFileSystem.html" title="class in com.github.mizosoft.methanol.testutils.io.file">ForwardingFileSystem</a></div>
-<div class="col-last even-row-color all-classes-table-tab2 all-classes-table">&nbsp;</div>
-<div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/io/file/ForwardingFileSystemProvider.html" title="class in com.github.mizosoft.methanol.testutils.io.file">ForwardingFileSystemProvider</a></div>
 <div class="col-last odd-row-color all-classes-table-tab2 all-classes-table">&nbsp;</div>
 <div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/extensions/ForwardingMimeBodyPublisher.html" title="class in com.github.mizosoft.methanol.internal.extensions">ForwardingMimeBodyPublisher</a></div>
 <div class="col-last even-row-color all-classes-table-tab2 all-classes-table">&nbsp;</div>
@@ -454,7 +484,7 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/ProgressTracker.html" title="class in com.github.mizosoft.methanol">ProgressTracker</a></div>
 <div class="col-last even-row-color all-classes-table-tab2 all-classes-table">
-<div class="block">Allows attaching a listener to un upload or download operation for tracking progress.</div>
+<div class="block">A progress tracker for upload and download operations.</div>
 </div>
 <div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/ProgressTracker.Builder.html" title="class in com.github.mizosoft.methanol">ProgressTracker.Builder</a></div>
 <div class="col-last odd-row-color all-classes-table-tab2 all-classes-table">
@@ -484,88 +514,102 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color all-classes-table-tab2 all-classes-table">
 <div class="block">A response with a "raw" body that is yet to be handled.</div>
 </div>
-<div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/RegistryFileTypeDetector.html" title="class in com.github.mizosoft.methanol.testutils">RegistryFileTypeDetector</a></div>
+<div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/cache/RedirectingInterceptor.html" title="class in com.github.mizosoft.methanol.internal.cache">RedirectingInterceptor</a></div>
 <div class="col-last even-row-color all-classes-table-tab2 all-classes-table">
+<div class="block">An <a href="methanol/com/github/mizosoft/methanol/Methanol.Interceptor.html" title="interface in com.github.mizosoft.methanol"><code>Methanol.Interceptor</code></a> that follows redirects.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/RegistryFileTypeDetector.html" title="class in com.github.mizosoft.methanol.testutils">RegistryFileTypeDetector</a></div>
+<div class="col-last odd-row-color all-classes-table-tab2 all-classes-table">
 <div class="block"><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/nio/file/spi/FileTypeDetector.html" title="class or interface in java.nio.file.spi" class="external-link"><code>FileTypeDetector</code></a> that pulls media type from registered entries.</div>
+</div>
+<div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/RequestVerifier.html" title="class in com.github.mizosoft.methanol.testutils">RequestVerifier</a></div>
+<div class="col-last even-row-color all-classes-table-tab2 all-classes-table">
+<div class="block">A small DSL for testing <code>HttpRequests</code>.</div>
 </div>
 <div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/extensions/ResponseBuilder.html" title="class in com.github.mizosoft.methanol.internal.extensions">ResponseBuilder</a>&lt;<a href="methanol/com/github/mizosoft/methanol/internal/extensions/ResponseBuilder.html" title="type parameter in ResponseBuilder">T</a>&gt;</div>
 <div class="col-last odd-row-color all-classes-table-tab2 all-classes-table">&nbsp;</div>
-<div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/spi/ServiceCache.html" title="class in com.github.mizosoft.methanol.internal.spi">ServiceCache</a>&lt;<a href="methanol/com/github/mizosoft/methanol/internal/spi/ServiceCache.html" title="type parameter in ServiceCache">S</a>&gt;</div>
-<div class="col-last even-row-color all-classes-table-tab2 all-classes-table">
+<div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/ResponseVerifier.html" title="class in com.github.mizosoft.methanol.testutils">ResponseVerifier</a>&lt;<a href="methanol.testutils/com/github/mizosoft/methanol/testutils/ResponseVerifier.html" title="type parameter in ResponseVerifier">T</a>&gt;</div>
+<div class="col-last even-row-color all-classes-table-tab2 all-classes-table">&nbsp;</div>
+<div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/spi/ServiceCache.html" title="class in com.github.mizosoft.methanol.internal.spi">ServiceCache</a>&lt;<a href="methanol/com/github/mizosoft/methanol/internal/spi/ServiceCache.html" title="type parameter in ServiceCache">S</a>&gt;</div>
+<div class="col-last odd-row-color all-classes-table-tab2 all-classes-table">
 <div class="block">Utility class for loading/caching service providers.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table-tab1 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/cache/Store.html" title="interface in com.github.mizosoft.methanol.internal.cache">Store</a></div>
-<div class="col-last odd-row-color all-classes-table-tab1 all-classes-table">
+<div class="col-first even-row-color all-classes-table-tab1 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/cache/Store.html" title="interface in com.github.mizosoft.methanol.internal.cache">Store</a></div>
+<div class="col-last even-row-color all-classes-table-tab1 all-classes-table">
 <div class="block">A bounded repository of binary data entries identified by string keys.</div>
 </div>
-<div class="col-first even-row-color all-classes-table-tab1 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/cache/Store.Editor.html" title="interface in com.github.mizosoft.methanol.internal.cache">Store.Editor</a></div>
-<div class="col-last even-row-color all-classes-table-tab1 all-classes-table">
+<div class="col-first odd-row-color all-classes-table-tab1 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/cache/Store.Editor.html" title="interface in com.github.mizosoft.methanol.internal.cache">Store.Editor</a></div>
+<div class="col-last odd-row-color all-classes-table-tab1 all-classes-table">
 <div class="block">Writes an entry's metadata block and data stream.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table-tab1 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/cache/Store.Viewer.html" title="interface in com.github.mizosoft.methanol.internal.cache">Store.Viewer</a></div>
-<div class="col-last odd-row-color all-classes-table-tab1 all-classes-table">
+<div class="col-first even-row-color all-classes-table-tab1 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/cache/Store.Viewer.html" title="interface in com.github.mizosoft.methanol.internal.cache">Store.Viewer</a></div>
+<div class="col-last even-row-color all-classes-table-tab1 all-classes-table">
 <div class="block">Reads an entry's metadata block and data stream.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab4"><a href="methanol/com/github/mizosoft/methanol/internal/cache/StoreCorruptionException.html" title="class in com.github.mizosoft.methanol.internal.cache">StoreCorruptionException</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/cache/StoreIO.html" title="class in com.github.mizosoft.methanol.internal.cache">StoreIO</a></div>
-<div class="col-last odd-row-color all-classes-table-tab2 all-classes-table">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab4"><a href="methanol/com/github/mizosoft/methanol/internal/cache/StoreCorruptionException.html" title="class in com.github.mizosoft.methanol.internal.cache">StoreCorruptionException</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/cache/StoreIO.html" title="class in com.github.mizosoft.methanol.internal.cache">StoreIO</a></div>
+<div class="col-last even-row-color all-classes-table-tab2 all-classes-table">
 <div class="block">Read/Write utilities that make sure exactly the requested bytes are read/written.</div>
 </div>
-<div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/StringDecoder.html" title="class in com.github.mizosoft.methanol.testutils">StringDecoder</a></div>
-<div class="col-last even-row-color all-classes-table-tab2 all-classes-table">&nbsp;</div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab4"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/TestException.html" title="class in com.github.mizosoft.methanol.testutils">TestException</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/TestSubscriber.html" title="class in com.github.mizosoft.methanol.testutils">TestSubscriber</a>&lt;<a href="methanol.testutils/com/github/mizosoft/methanol/testutils/TestSubscriber.html" title="type parameter in TestSubscriber">T</a>&gt;</div>
-<div class="col-last even-row-color all-classes-table-tab2 all-classes-table">&nbsp;</div>
-<div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/TestUtils.html" title="class in com.github.mizosoft.methanol.testutils">TestUtils</a></div>
+<div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/StringDecoder.html" title="class in com.github.mizosoft.methanol.testutils">StringDecoder</a></div>
 <div class="col-last odd-row-color all-classes-table-tab2 all-classes-table">&nbsp;</div>
-<div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/TextBodyAdapter.html" title="class in com.github.mizosoft.methanol.testutils">TextBodyAdapter</a></div>
-<div class="col-last even-row-color all-classes-table-tab2 all-classes-table">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab4"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/TestException.html" title="class in com.github.mizosoft.methanol.testutils">TestException</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/TestSubscriber.html" title="class in com.github.mizosoft.methanol.testutils">TestSubscriber</a>&lt;<a href="methanol.testutils/com/github/mizosoft/methanol/testutils/TestSubscriber.html" title="type parameter in TestSubscriber">T</a>&gt;</div>
+<div class="col-last odd-row-color all-classes-table-tab2 all-classes-table">
+<div class="block">Facilitates testing Publisher implementations and the like.</div>
+</div>
+<div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/TestUtils.html" title="class in com.github.mizosoft.methanol.testutils">TestUtils</a></div>
+<div class="col-last even-row-color all-classes-table-tab2 all-classes-table">&nbsp;</div>
+<div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/TextBodyAdapter.html" title="class in com.github.mizosoft.methanol.testutils">TextBodyAdapter</a></div>
+<div class="col-last odd-row-color all-classes-table-tab2 all-classes-table">
 <div class="block">Converts <code>CharSequence</code> to requests and responses to <code>String</code>.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table-tab1 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/function/ThrowingFunction.html" title="interface in com.github.mizosoft.methanol.internal.function">ThrowingFunction</a>&lt;<a href="methanol/com/github/mizosoft/methanol/internal/function/ThrowingFunction.html" title="type parameter in ThrowingFunction">T</a>,&#8203;<a href="methanol/com/github/mizosoft/methanol/internal/function/ThrowingFunction.html" title="type parameter in ThrowingFunction">R</a>&gt;</div>
-<div class="col-last odd-row-color all-classes-table-tab1 all-classes-table">
+<div class="col-first even-row-color all-classes-table-tab1 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/function/ThrowingFunction.html" title="interface in com.github.mizosoft.methanol.internal.function">ThrowingFunction</a>&lt;<a href="methanol/com/github/mizosoft/methanol/internal/function/ThrowingFunction.html" title="type parameter in ThrowingFunction">T</a>,&#8203;<a href="methanol/com/github/mizosoft/methanol/internal/function/ThrowingFunction.html" title="type parameter in ThrowingFunction">R</a>&gt;</div>
+<div class="col-last even-row-color all-classes-table-tab1 all-classes-table">
 <div class="block">A <code>Function</code> that may throw a checked exception.</div>
 </div>
-<div class="col-first even-row-color all-classes-table-tab1 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/function/ThrowingRunnable.html" title="interface in com.github.mizosoft.methanol.internal.function">ThrowingRunnable</a></div>
-<div class="col-last even-row-color all-classes-table-tab1 all-classes-table">
+<div class="col-first odd-row-color all-classes-table-tab1 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/function/ThrowingRunnable.html" title="interface in com.github.mizosoft.methanol.internal.function">ThrowingRunnable</a></div>
+<div class="col-last odd-row-color all-classes-table-tab1 all-classes-table">
 <div class="block">A <code>Runnable</code> that may throw a checked exception.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table-tab1 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/function/ThrowingSupplier.html" title="interface in com.github.mizosoft.methanol.internal.function">ThrowingSupplier</a>&lt;<a href="methanol/com/github/mizosoft/methanol/internal/function/ThrowingSupplier.html" title="type parameter in ThrowingSupplier">T</a>&gt;</div>
-<div class="col-last odd-row-color all-classes-table-tab1 all-classes-table">
+<div class="col-first even-row-color all-classes-table-tab1 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/function/ThrowingSupplier.html" title="interface in com.github.mizosoft.methanol.internal.function">ThrowingSupplier</a>&lt;<a href="methanol/com/github/mizosoft/methanol/internal/function/ThrowingSupplier.html" title="type parameter in ThrowingSupplier">T</a>&gt;</div>
+<div class="col-last even-row-color all-classes-table-tab1 all-classes-table">
 <div class="block">A <code>Supplier</code> that may throw a checked exception.</div>
 </div>
-<div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/extensions/TimeoutSubscriber.html" title="class in com.github.mizosoft.methanol.internal.extensions">TimeoutSubscriber</a>&lt;<a href="methanol/com/github/mizosoft/methanol/internal/extensions/TimeoutSubscriber.html" title="type parameter in TimeoutSubscriber">T</a>&gt;</div>
-<div class="col-last even-row-color all-classes-table-tab2 all-classes-table">
+<div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/extensions/TimeoutSubscriber.html" title="class in com.github.mizosoft.methanol.internal.extensions">TimeoutSubscriber</a>&lt;<a href="methanol/com/github/mizosoft/methanol/internal/extensions/TimeoutSubscriber.html" title="type parameter in TimeoutSubscriber">T</a>&gt;</div>
+<div class="col-last odd-row-color all-classes-table-tab2 all-classes-table">
 <div class="block">Intercepts requests to upstream and schedules error completion with <code>
  HttpReadTimeoutException</code> if each not fulfilled within a timeout.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table-tab1 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/TrackedResponse.html" title="interface in com.github.mizosoft.methanol">TrackedResponse</a>&lt;<a href="methanol/com/github/mizosoft/methanol/TrackedResponse.html" title="type parameter in TrackedResponse">T</a>&gt;</div>
-<div class="col-last odd-row-color all-classes-table-tab1 all-classes-table">
+<div class="col-first even-row-color all-classes-table-tab1 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/TrackedResponse.html" title="interface in com.github.mizosoft.methanol">TrackedResponse</a>&lt;<a href="methanol/com/github/mizosoft/methanol/TrackedResponse.html" title="type parameter in TrackedResponse">T</a>&gt;</div>
+<div class="col-last even-row-color all-classes-table-tab1 all-classes-table">
 <div class="block">A response with recorded send/receive timestamps.</div>
 </div>
-<div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/TypeRef.html" title="class in com.github.mizosoft.methanol">TypeRef</a>&lt;<a href="methanol/com/github/mizosoft/methanol/TypeRef.html" title="type parameter in TypeRef">T</a>&gt;</div>
-<div class="col-last even-row-color all-classes-table-tab2 all-classes-table">
+<div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/TypeRef.html" title="class in com.github.mizosoft.methanol">TypeRef</a>&lt;<a href="methanol/com/github/mizosoft/methanol/TypeRef.html" title="type parameter in TypeRef">T</a>&gt;</div>
+<div class="col-last odd-row-color all-classes-table-tab2 all-classes-table">
 <div class="block">An object that represents the <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link"><code>Type</code></a> of the generic argument <code>T</code>.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/function/Unchecked.html" title="class in com.github.mizosoft.methanol.internal.function">Unchecked</a></div>
-<div class="col-last odd-row-color all-classes-table-tab2 all-classes-table">
+<div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/function/Unchecked.html" title="class in com.github.mizosoft.methanol.internal.function">Unchecked</a></div>
+<div class="col-last even-row-color all-classes-table-tab2 all-classes-table">
 <div class="block">Static functions that make it easier to mix checked exceptions with lambdas.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab4"><a href="methanol.adapter.jaxb/com/github/mizosoft/methanol/adapter/jaxb/UncheckedJaxbException.html" title="class in com.github.mizosoft.methanol.adapter.jaxb">UncheckedJaxbException</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab4">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab4"><a href="methanol.adapter.jaxb/com/github/mizosoft/methanol/adapter/jaxb/UncheckedJaxbException.html" title="class in com.github.mizosoft.methanol.adapter.jaxb">UncheckedJaxbException</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab4">
 <div class="block">Unchecked wrapper over a <code>JAXBException</code>.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/flow/Upstream.html" title="class in com.github.mizosoft.methanol.internal.flow">Upstream</a></div>
-<div class="col-last odd-row-color all-classes-table-tab2 all-classes-table">
+<div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/flow/Upstream.html" title="class in com.github.mizosoft.methanol.internal.flow">Upstream</a></div>
+<div class="col-last even-row-color all-classes-table-tab2 all-classes-table">
 <div class="block">A one-use atomic reference to an upstream subscription.</div>
 </div>
-<div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/Utils.html" title="class in com.github.mizosoft.methanol.internal">Utils</a></div>
-<div class="col-last even-row-color all-classes-table-tab2 all-classes-table">
+<div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/Utils.html" title="class in com.github.mizosoft.methanol.internal">Utils</a></div>
+<div class="col-last odd-row-color all-classes-table-tab2 all-classes-table">
 <div class="block">Miscellaneous utilities.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/Validate.html" title="class in com.github.mizosoft.methanol.internal">Validate</a></div>
+<div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol/com/github/mizosoft/methanol/internal/Validate.html" title="class in com.github.mizosoft.methanol.internal">Validate</a></div>
+<div class="col-last even-row-color all-classes-table-tab2 all-classes-table">&nbsp;</div>
+<div class="col-first odd-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/Verification.html" title="class in com.github.mizosoft.methanol.testutils">Verification</a></div>
 <div class="col-last odd-row-color all-classes-table-tab2 all-classes-table">&nbsp;</div>
 <div class="col-first even-row-color all-classes-table-tab2 all-classes-table"><a href="methanol.testutils/com/github/mizosoft/methanol/testutils/io/file/WindowsEmulatingFileSystem.html" title="class in com.github.mizosoft.methanol.testutils.io.file">WindowsEmulatingFileSystem</a></div>
 <div class="col-last even-row-color all-classes-table-tab2 all-classes-table">

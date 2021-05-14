@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://mizosoft.github.io/methanol/adapters/jackson_flux/">
       
       <link rel="icon" href="../../images/flask.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.e35208c4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bde7dde4.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
@@ -413,14 +413,16 @@
 
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       <label class="md-nav__link" for="__nav_4">
         Adapters
@@ -460,11 +462,139 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../README.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          methanol-jackson-flux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         methanol-jackson-flux
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#decoding" class="md-nav__link">
+    Decoding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encoding" class="md-nav__link">
+    Encoding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gradle" class="md-nav__link">
+    Gradle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maven" class="md-nav__link">
+    Maven
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-path" class="md-nav__link">
+    Module Path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classpath" class="md-nav__link">
+    Classpath
+  </a>
+  
+    <nav class="md-nav" aria-label="Classpath">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-autoservice" class="md-nav__link">
+    Using AutoService
+  </a>
+  
+    <nav class="md-nav" aria-label="Using AutoService">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gradle_1" class="md-nav__link">
+    Gradle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maven_1" class="md-nav__link">
+    Maven
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-configuration" class="md-nav__link">
+    Manual Configuration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -625,6 +755,26 @@
     Using AutoService
   </a>
   
+    <nav class="md-nav" aria-label="Using AutoService">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gradle_1" class="md-nav__link">
+    Gradle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maven_1" class="md-nav__link">
+    Maven
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -673,7 +823,6 @@ with this decoder.</p>
 <code>java.util.concurrent.Flow.Publisher</code> is encoded to a JSON array containing zero or more elements, each mapped from each published object.
 <code>Mono</code> sources are encoded to a single JSON object (if completed with any).</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<p>First, add <code>methanol-jackson-flux</code> as a dependency.</p>
 <h3 id="gradle">Gradle<a class="headerlink" href="#gradle" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>implementation &#39;com.github.mizosoft.methanol:methanol-jackson-flux:1.5.0&#39;
 </code></pre></div>
@@ -684,8 +833,8 @@ with this decoder.</p>
   <span class="nt">&lt;version&gt;</span>1.5.0<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
 </code></pre></div>
-<p>Next, register the adapters as <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ServiceLoader.html">service providers</a> so Methanol knows they're
-there. The way this is done depends on your project setup.</p>
+<p>The adapters need to be registered as <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ServiceLoader.html">service providers</a> so Methanol knows they're there.
+The way this is done depends on your project setup.</p>
 <h3 id="module-path">Module Path<a class="headerlink" href="#module-path" title="Permanent link">&para;</a></h3>
 <p>Follow these steps if your project uses the Java module system.</p>
 <ol>
@@ -710,32 +859,60 @@ there. The way this is done depends on your project setup.</p>
 </li>
 <li>
 <p>Add the corresponding provider declarations in your <code>module-info.java</code> file.</p>
-<div class="highlight"><pre><span></span><code><span class="n">provides</span> <span class="n">BodyAdapter</span><span class="p">.</span><span class="na">Encoder</span> <span class="n">with</span> <span class="n">JacksonFluxProviders</span><span class="p">.</span><span class="na">EncoderProvider</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="n">requires</span> <span class="n">methanol</span><span class="p">.</span><span class="na">adapter</span><span class="p">.</span><span class="na">jackson</span><span class="p">.</span><span class="na">flux</span><span class="p">;</span>
+
+<span class="n">provides</span> <span class="n">BodyAdapter</span><span class="p">.</span><span class="na">Encoder</span> <span class="n">with</span> <span class="n">JacksonFluxProviders</span><span class="p">.</span><span class="na">EncoderProvider</span><span class="p">;</span>
 <span class="n">provides</span> <span class="n">BodyAdapter</span><span class="p">.</span><span class="na">Decoder</span> <span class="n">with</span> <span class="n">JacksonFluxProviders</span><span class="p">.</span><span class="na">DecoderProvider</span><span class="p">;</span>
 </code></pre></div>
 </li>
 </ol>
 <h3 id="classpath">Classpath<a class="headerlink" href="#classpath" title="Permanent link">&para;</a></h3>
-<p>Registering adapters from the classpath requires declaring the adapter's implementation classes in
-provider-configuration files that are bundled with your JAR. You'll first need to implement
-delegating <code>Encoder</code> &amp; <code>Decoder</code> that forward to the instances created by <code>JacksonAdapterFactory</code>.
-Extending from <code>ForwardingEncoder</code> &amp; <code>ForwardingDecoder</code> makes this easier.</p>
-<p>It is recommended to use Google's <a href="https://github.com/google/auto/tree/master/service">AutoService</a> to generate the provider-configuration
-files automatically, so you won't bother writing them.</p>
+<p>Registering adapters from the classpath requires declaring the implementation classes in provider-configuration
+files that are bundled with your JAR. You'll first need to implement delegating <code>Encoder</code> &amp; <code>Decoder</code>
+that forward to the instances created by <code>JacksonAdapterFactory</code>. Extending from <code>ForwardingEncoder</code> &amp;
+<code>ForwardingDecoder</code> makes this easier.</p>
+<p>You can use Google's <a href="https://github.com/google/auto/tree/master/service">AutoService</a> to generate the provider-configuration files automatically,
+so you won't bother writing them.</p>
 <h4 id="using-autoservice">Using AutoService<a class="headerlink" href="#using-autoservice" title="Permanent link">&para;</a></h4>
-<p>After <a href="https://github.com/google/auto/tree/master/service#getting-started">installing AutoService</a>, add this class to your project:</p>
+<p>First, <a href="https://github.com/google/auto/tree/master/service#getting-started">install AutoService</a>.</p>
+<h5 id="gradle_1">Gradle<a class="headerlink" href="#gradle_1" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code>implementation &quot;com.google.auto.service:auto-service-annotations:$autoServiceVersion&quot;
+annotationProcessor &quot;com.google.auto.service:auto-service:$autoServiceVersion&quot;
+</code></pre></div>
+<h5 id="maven_1">Maven<a class="headerlink" href="#maven_1" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;dependency&gt;</span>
+  <span class="nt">&lt;groupId&gt;</span>com.google.auto.service<span class="nt">&lt;/groupId&gt;</span>
+  <span class="nt">&lt;artifactId&gt;</span>auto-service-annotations<span class="nt">&lt;/artifactId&gt;</span>
+  <span class="nt">&lt;version&gt;</span>${autoServiceVersion}<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
+<p>Configure the annotation processor with the compiler plugin.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;plugin&gt;</span>
+  <span class="nt">&lt;artifactId&gt;</span>maven-compiler-plugin<span class="nt">&lt;/artifactId&gt;</span>
+  <span class="nt">&lt;configuration&gt;</span>
+    <span class="nt">&lt;annotationProcessorPaths&gt;</span>
+      <span class="nt">&lt;path&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>com.google.auto.service<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>auto-service<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>${autoServiceVersion}<span class="nt">&lt;/version&gt;</span>
+      <span class="nt">&lt;/path&gt;</span>
+    <span class="nt">&lt;/annotationProcessorPaths&gt;</span>
+  <span class="nt">&lt;/configuration&gt;</span>
+<span class="nt">&lt;/plugin&gt;</span>
+</code></pre></div>
+<p>Next, add this class to your project:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">JacksonFluxAdapters</span> <span class="p">{</span>
   <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">ObjectMapper</span> <span class="n">mapper</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ObjectMapper</span><span class="p">();</span>
 
   <span class="nd">@AutoService</span><span class="p">(</span><span class="n">BodyAdapter</span><span class="p">.</span><span class="na">Encoder</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
-  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">JacksonFluxEncoder</span> <span class="kd">extends</span> <span class="n">ForwardingEncoder</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">JacksonFluxEncoder</span> <span class="kd">extends</span> <span class="n">ForwardingEncoder</span> <span class="p">{</span>
     <span class="kd">public</span> <span class="nf">JacksonFluxEncoder</span><span class="p">()</span> <span class="p">{</span>
       <span class="kd">super</span><span class="p">(</span><span class="n">JacksonFluxAdapterFactory</span><span class="p">.</span><span class="na">createEncoder</span><span class="p">(</span><span class="n">mapper</span><span class="p">));</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
   <span class="nd">@AutoService</span><span class="p">(</span><span class="n">BodyAdapter</span><span class="p">.</span><span class="na">Decoder</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
-  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">JacksonFluxDecoder</span> <span class="kd">extends</span> <span class="n">ForwardingDecoder</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">JacksonFluxDecoder</span> <span class="kd">extends</span> <span class="n">ForwardingDecoder</span> <span class="p">{</span>
     <span class="kd">public</span> <span class="nf">JacksonFluxDecoder</span><span class="p">()</span> <span class="p">{</span>
       <span class="kd">super</span><span class="p">(</span><span class="n">JacksonFluxAdapterFactory</span><span class="p">.</span><span class="na">createDecoder</span><span class="p">(</span><span class="n">mapper</span><span class="p">));</span>
     <span class="p">}</span>
@@ -743,17 +920,17 @@ files automatically, so you won't bother writing them.</p>
 <span class="p">}</span>
 </code></pre></div>
 <h4 id="manual-configuration">Manual Configuration<a class="headerlink" href="#manual-configuration" title="Permanent link">&para;</a></h4>
-<p>First, add this class to your project:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">JacksonAdapters</span> <span class="p">{</span>
+<p>You can also write the configuration files manually. First, add this class to your project:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">JacksonFluxAdapters</span> <span class="p">{</span>
   <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">ObjectMapper</span> <span class="n">mapper</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ObjectMapper</span><span class="p">();</span>
 
-  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">JacksonFluxEncoder</span> <span class="kd">extends</span> <span class="n">ForwardingEncoder</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">JacksonFluxEncoder</span> <span class="kd">extends</span> <span class="n">ForwardingEncoder</span> <span class="p">{</span>
     <span class="kd">public</span> <span class="nf">JacksonFluxEncoder</span><span class="p">()</span> <span class="p">{</span>
       <span class="kd">super</span><span class="p">(</span><span class="n">JacksonFluxAdapterFactory</span><span class="p">.</span><span class="na">createEncoder</span><span class="p">(</span><span class="n">mapper</span><span class="p">));</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">JacksonFluxDecoder</span> <span class="kd">extends</span> <span class="n">ForwardingDecoder</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">JacksonFluxDecoder</span> <span class="kd">extends</span> <span class="n">ForwardingDecoder</span> <span class="p">{</span>
     <span class="kd">public</span> <span class="nf">JacksonFluxDecoder</span><span class="p">()</span> <span class="p">{</span>
       <span class="kd">super</span><span class="p">(</span><span class="n">JacksonFluxAdapterFactory</span><span class="p">.</span><span class="na">createDecoder</span><span class="p">(</span><span class="n">mapper</span><span class="p">));</span>
     <span class="p">}</span>
@@ -787,7 +964,7 @@ encoder named:</p>
           </div>
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
           </a>
         
@@ -795,6 +972,39 @@ encoder named:</p>
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../jackson/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              methanol-jackson
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../jaxb/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              methanol-jaxb
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -829,10 +1039,10 @@ encoder named:</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.sections"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.sections"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      <script src="../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
       
     
   </body>

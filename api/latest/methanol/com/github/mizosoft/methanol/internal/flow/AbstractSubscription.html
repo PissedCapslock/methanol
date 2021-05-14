@@ -144,37 +144,40 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 <div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
 <div class="block">Calls downstream's <code>onError</code> after cancelling this subscription.</div>
 </div>
-<div class="col-first even-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code>protected abstract long</code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code><span class="member-name-link"><a href="#emit(java.util.concurrent.Flow.Subscriber,long)">emit</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/concurrent/Flow.Subscriber.html" title="class or interface in java.util.concurrent" class="external-link">Flow.Subscriber</a>&lt;? super <a href="AbstractSubscription.html" title="type parameter in AbstractSubscription">T</a>&gt;&nbsp;downstream,
+<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>protected long</code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#currentDemand()">currentDemand</a></span>()</code></div>
+<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code>protected abstract long</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code><span class="member-name-link"><a href="#emit(java.util.concurrent.Flow.Subscriber,long)">emit</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/concurrent/Flow.Subscriber.html" title="class or interface in java.util.concurrent" class="external-link">Flow.Subscriber</a>&lt;? super <a href="AbstractSubscription.html" title="type parameter in AbstractSubscription">T</a>&gt;&nbsp;downstream,
  long&nbsp;emit)</code></div>
-<div class="col-last even-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3">
+<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3">
 <div class="block">Main method for item emission.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>protected boolean</code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#hasPendingErrors()">hasPendingErrors</a></span>()</code></div>
-<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
+<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>protected boolean</code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#hasPendingErrors()">hasPendingErrors</a></span>()</code></div>
+<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
 <div class="block">Returns <code>true</code> if the subscriber is to be completed exceptionally.</div>
 </div>
-<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>protected boolean</code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#isCancelled()">isCancelled</a></span>()</code></div>
-<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
-<div class="block">Returns <code>true</code> if cancelled.</div>
+<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>protected boolean</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#isCancelled()">isCancelled</a></span>()</code></div>
+<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
+<div class="block">Returns <code>true</code> if this subscription is cancelled.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#request(long)">request</a></span>&#8203;(long&nbsp;n)</code></div>
-<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#signal(boolean)">signal</a></span>&#8203;(boolean&nbsp;force)</code></div>
-<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#request(long)">request</a></span>&#8203;(long&nbsp;n)</code></div>
+<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#signal(boolean)">signal</a></span>&#8203;(boolean&nbsp;force)</code></div>
+<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
 <div class="block">Schedules a signaller task.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#signalError(java.lang.Throwable)">signalError</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;error)</code></div>
-<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>protected boolean</code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#submitOnNext(java.util.concurrent.Flow.Subscriber,T)">submitOnNext</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/concurrent/Flow.Subscriber.html" title="class or interface in java.util.concurrent" class="external-link">Flow.Subscriber</a>&lt;? super <a href="AbstractSubscription.html" title="type parameter in AbstractSubscription">T</a>&gt;&nbsp;downstream,
+<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#signalError(java.lang.Throwable)">signalError</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;error)</code></div>
+<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>protected boolean</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#submitOnNext(java.util.concurrent.Flow.Subscriber,T)">submitOnNext</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/concurrent/Flow.Subscriber.html" title="class or interface in java.util.concurrent" class="external-link">Flow.Subscriber</a>&lt;? super <a href="AbstractSubscription.html" title="type parameter in AbstractSubscription">T</a>&gt;&nbsp;downstream,
  <a href="AbstractSubscription.html" title="type parameter in AbstractSubscription">T</a>&nbsp;item)</code></div>
-<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
+<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
 <div class="block">Submits given item to the downstream, returning <code>false</code> and cancelling on failure.</div>
 </div>
 </div>
@@ -233,7 +236,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 <section class="detail" id="signal(boolean)">
 <h3>signal</h3>
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">signal</span>&#8203;<span class="parameters">(boolean&nbsp;force)</span></div>
-<div class="block">Schedules a signaller task. <code>force</code> tells whether to schedule in case of no demand</div>
+<div class="block">Schedules a signaller task. <code>force</code> tells whether to schedule in case of no demand.</div>
 </section>
 </li>
 <li>
@@ -249,24 +252,26 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
  long&nbsp;emit)</span></div>
 <div class="block">Main method for item emission. At most <code>e</code> items are emitted to the downstream using
  <a href="#submitOnNext(java.util.concurrent.Flow.Subscriber,T)"><code>submitOnNext(Subscriber, Object)</code></a> as long as it returns <code>true</code>. The actual number
- of emitted items is returned, may be <code>0</code> in case of cancellation. If the underlying
- source is finished, the subscriber is completed with <a href="#cancelOnComplete(java.util.concurrent.Flow.Subscriber)"><code>cancelOnComplete(Subscriber)</code></a>.</div>
+ of emitted items is returned, may be 0 in case of cancellation or if no items are emitted,
+ perhaps due to lack thereof. If the underlying source is finished, the subscriber is completed
+ with <a href="#cancelOnComplete(java.util.concurrent.Flow.Subscriber)"><code>cancelOnComplete(Subscriber)</code></a>.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="abort(boolean)">
 <h3>abort</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">abort</span>&#8203;<span class="parameters">(boolean&nbsp;flowInterrupted)</span></div>
-<div class="block">Called when the subscription is cancelled. <code>flowInterrupted</code> specifies whether
- cancellation was due to ending the normal flow of signals (signal|signalError) or due to flow
- interruption by downstream (e.g. calling <code>cancel()</code> or throwing from <code>onNext</code>).</div>
+<div class="block">Called when the subscription is cancelled. <code>flowInterrupted</code> tells whether cancellation
+ was due to ending the normal flow of signals (signal|signalError) or due to flow interruption
+ by downstream (e.g. calling <code>cancel()</code> or throwing from <code>onNext</code>).</div>
 </section>
 </li>
 <li>
 <section class="detail" id="isCancelled()">
 <h3>isCancelled</h3>
 <div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isCancelled</span>()</div>
-<div class="block">Returns <code>true</code> if cancelled. <code>false</code> result is immediately outdated.</div>
+<div class="block">Returns <code>true</code> if this subscription is cancelled. <code>false</code> result is immediately
+ outdated.</div>
 </section>
 </li>
 <li>
@@ -301,6 +306,12 @@ implements <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base
 <div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">submitOnNext</span>&#8203;<span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/concurrent/Flow.Subscriber.html" title="class or interface in java.util.concurrent" class="external-link">Flow.Subscriber</a>&lt;? super <a href="AbstractSubscription.html" title="type parameter in AbstractSubscription">T</a>&gt;&nbsp;downstream,
  <a href="AbstractSubscription.html" title="type parameter in AbstractSubscription">T</a>&nbsp;item)</span></div>
 <div class="block">Submits given item to the downstream, returning <code>false</code> and cancelling on failure.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="currentDemand()">
+<h3>currentDemand</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">currentDemand</span>()</div>
 </section>
 </li>
 </ul>

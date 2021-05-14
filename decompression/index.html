@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://mizosoft.github.io/methanol/decompression/">
       
       <link rel="icon" href="../images/flask.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.e35208c4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
@@ -558,7 +558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../adapters/README.md" class="md-nav__link">
+      <a href="../adapters/jackson_flux/" class="md-nav__link">
         methanol-jackson-flux
       </a>
     </li>
@@ -751,27 +751,28 @@ which gives you transparent response decompression for <code>gzip</code> &amp; <
 <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">get</span><span class="p">(</span><span class="n">String</span> <span class="n">url</span><span class="p">,</span> <span class="n">BodyHandler</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">bodyHandler</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span><span class="p">,</span> <span class="n">InterruptedException</span> <span class="p">{</span>
   <span class="c1">// No need to worry about adding Accept-Encoding and</span>
   <span class="c1">// decompressing the response. The client does that for you!</span>
-  <span class="k">return</span> <span class="n">client</span><span class="p">.</span><span class="na">send</span><span class="p">(</span><span class="n">MutableRequest</span><span class="p">.</span><span class="na">GET</span><span class="p">(</span><span class="n">url</span><span class="p">),</span> <span class="n">bodyHandler</span><span class="p">));</span>
+  <span class="k">return</span> <span class="n">client</span><span class="p">.</span><span class="na">send</span><span class="p">(</span><span class="n">MutableRequest</span><span class="p">.</span><span class="na">GET</span><span class="p">(</span><span class="n">url</span><span class="p">),</span> <span class="n">bodyHandler</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Read on if you're interested in knowing how that's accomplished or you want to extend decompression
 support.</p>
 <h2 id="decoding-bodyhandler">Decoding BodyHandler<a class="headerlink" href="#decoding-bodyhandler" title="Permanent link">&para;</a></h2>
-<p>The entry point to response body decompression is <code>MoreBodyHandlers::decoding</code>. This method takes your
-desired <code>BodyHandler</code> and gives you one that decompresses the response body as your handler's <code>BodySubscriber</code>
-receives it.</p>
+<p>The entry point to response body decompression is <a href="https://mizosoft.github.io/methanol/api/latest/methanol/com/github/mizosoft/methanol/MoreBodyHandlers.html#decoding(java.net.http.HttpResponse.BodyHandler)"><code>MoreBodyHandlers::decoding</code></a>.
+This method takes your desired <code>BodyHandler</code> and gives you one that decompresses the response body as
+your handler's <code>BodySubscriber</code> receives it.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="na">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">MoreBodyHandlers</span><span class="p">.</span><span class="na">decoding</span><span class="p">(</span><span class="n">BodyHandlers</span><span class="p">.</span><span class="na">ofString</span><span class="p">()));</span>
 </code></pre></div>
-<p>The new <code>BodyHandler</code> intercepts the response, checking if there's a <code>Content-Encoding</code> header. If
-so, the body is decompressed accordingly, and your handler won't see any <code>Content-Encoding</code> or
-<code>Content-Length</code> headers. This is because they're outdated in that case. Otherwise, the handler acts
-as a no-op and delegates to your handler directly.</p>
+<!-- The new `BodyHandler` intercepts the response, checking if there's a `Content-Encoding` header. If
+so, the body is decompressed accordingly, and your handler won't see any `Content-Encoding` or
+`Content-Length` headers. This is because they're outdated in that case. Otherwise, the handler acts
+as a no-op and delegates to your handler directly. -->
+
 <p>Note that it doesn't matter which <code>BodyHandler</code> you're using; you can have whatever response body
 type you want.</p>
 <h2 id="bodydecoder">BodyDecoder<a class="headerlink" href="#bodydecoder" title="Permanent link">&para;</a></h2>
-<p>A <code>BodyDecoder</code> is a <code>BodySubscriber</code> with the added semantics of a <code>Flow.Processor</code>. It intercepts
-the flow of bytes on its way down from the HTTP client, decoding each <code>List&lt;ByteBuffer&gt;</code> individually.
-The decoded bytes are forwarded to a downstream <code>BodySubscriber</code>, which converts them into the desired
+<p>A <a href="https://mizosoft.github.io/methanol/api/latest/methanol/com/github/mizosoft/methanol/BodyDecoder.html"><code>BodyDecoder</code></a> is a <code>BodySubscriber</code> with the added semantics of a <code>Flow.Processor</code>.
+It intercepts the flow of bytes on its way down from the HTTP client, decoding each <code>List&lt;ByteBuffer&gt;</code>
+individually. The decoded bytes are forwarded to a downstream <code>BodySubscriber</code>, which converts them into the desired
 response body.</p>
 <p>A <code>BodyDecoder.Factory</code> associates itself with a defined encoding that's suitable as a <code>Content-Encoding</code>
 directive. Given a downstream <code>BodySubscriber</code>, the factory creates a <code>BodyDecoder</code> that forwards the
@@ -915,7 +916,7 @@ decompression.</p>
           </div>
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
           </a>
         
@@ -990,10 +991,10 @@ decompression.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.sections"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.sections"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      <script src="../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
       
     
   </body>

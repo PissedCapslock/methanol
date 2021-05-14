@@ -102,55 +102,62 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table-tab1 method-summary-table"><code>static <a href="HttpCache.StatsRecorder.html" title="interface in com.github.mizosoft.methanol">HttpCache.StatsRecorder</a></code></div>
-<div class="col-second even-row-color method-summary-table-tab1 method-summary-table"><code><span class="member-name-link"><a href="#createConcurrentRecorder()">createConcurrentRecorder</a></span>()</code></div>
+<div class="col-second even-row-color method-summary-table-tab1 method-summary-table"><code><span class="member-name-link"><a href="#createConcurrentPerUriRecorder()">createConcurrentPerUriRecorder</a></span>()</code></div>
 <div class="col-last even-row-color method-summary-table-tab1 method-summary-table">
-<div class="block">Creates a <code>StatsRecorder</code> that atomically increments each count.</div>
+<div class="block">Creates a <code>StatsRecorder</code> that atomically increments each count and records per <code>
+ URI</code> stats.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table-tab1 method-summary-table"><code>static <a href="HttpCache.StatsRecorder.html" title="interface in com.github.mizosoft.methanol">HttpCache.StatsRecorder</a></code></div>
-<div class="col-second odd-row-color method-summary-table-tab1 method-summary-table"><code><span class="member-name-link"><a href="#disabled()">disabled</a></span>()</code></div>
+<div class="col-second odd-row-color method-summary-table-tab1 method-summary-table"><code><span class="member-name-link"><a href="#createConcurrentRecorder()">createConcurrentRecorder</a></span>()</code></div>
 <div class="col-last odd-row-color method-summary-table-tab1 method-summary-table">
+<div class="block">Creates a <code>StatsRecorder</code> that atomically increments each count and doesn't record per
+ <code>URI</code> stats.</div>
+</div>
+<div class="col-first even-row-color method-summary-table-tab1 method-summary-table"><code>static <a href="HttpCache.StatsRecorder.html" title="interface in com.github.mizosoft.methanol">HttpCache.StatsRecorder</a></code></div>
+<div class="col-second even-row-color method-summary-table-tab1 method-summary-table"><code><span class="member-name-link"><a href="#disabled()">disabled</a></span>()</code></div>
+<div class="col-last even-row-color method-summary-table-tab1 method-summary-table">
 <div class="block">Returns a disabled <code>StatsRecorder</code>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code><span class="member-name-link"><a href="#recordHit(java.net.URI)">recordHit</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/net/URI.html" title="class or interface in java.net" class="external-link">URI</a>&nbsp;uri)</code></div>
-<div class="col-last even-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3">
+<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code><span class="member-name-link"><a href="#recordHit(java.net.URI)">recordHit</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/net/URI.html" title="class or interface in java.net" class="external-link">URI</a>&nbsp;uri)</code></div>
+<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3">
 <div class="block">Called when a request results in a cache hit, either directly or after successful
  revalidation with the server.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code><span class="member-name-link"><a href="#recordMiss(java.net.URI)">recordMiss</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/net/URI.html" title="class or interface in java.net" class="external-link">URI</a>&nbsp;uri)</code></div>
-<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code><span class="member-name-link"><a href="#recordMiss(java.net.URI)">recordMiss</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/net/URI.html" title="class or interface in java.net" class="external-link">URI</a>&nbsp;uri)</code></div>
+<div class="col-last even-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3">
 <div class="block">Called when a request results in a cache miss, either directly or after failed revalidation
  with the server.</div>
 </div>
-<div class="col-first even-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code><span class="member-name-link"><a href="#recordNetworkUse(java.net.URI)">recordNetworkUse</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/net/URI.html" title="class or interface in java.net" class="external-link">URI</a>&nbsp;uri)</code></div>
-<div class="col-last even-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3">
+<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code><span class="member-name-link"><a href="#recordNetworkUse(java.net.URI)">recordNetworkUse</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/net/URI.html" title="class or interface in java.net" class="external-link">URI</a>&nbsp;uri)</code></div>
+<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3">
 <div class="block">Called when the cache is about to use the network.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code><span class="member-name-link"><a href="#recordRequest(java.net.URI)">recordRequest</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/net/URI.html" title="class or interface in java.net" class="external-link">URI</a>&nbsp;uri)</code></div>
-<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code><span class="member-name-link"><a href="#recordRequest(java.net.URI)">recordRequest</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/net/URI.html" title="class or interface in java.net" class="external-link">URI</a>&nbsp;uri)</code></div>
+<div class="col-last even-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3">
 <div class="block">Called when a request is intercepted by the cache.</div>
 </div>
-<div class="col-first even-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code><span class="member-name-link"><a href="#recordWriteFailure(java.net.URI)">recordWriteFailure</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/net/URI.html" title="class or interface in java.net" class="external-link">URI</a>&nbsp;uri)</code></div>
-<div class="col-last even-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3">
+<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code><span class="member-name-link"><a href="#recordWriteFailure(java.net.URI)">recordWriteFailure</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/net/URI.html" title="class or interface in java.net" class="external-link">URI</a>&nbsp;uri)</code></div>
+<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3">
 <div class="block">Called when a write failure is encountered while writing a response to cache.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code><span class="member-name-link"><a href="#recordWriteSuccess(java.net.URI)">recordWriteSuccess</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/net/URI.html" title="class or interface in java.net" class="external-link">URI</a>&nbsp;uri)</code></div>
-<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code><span class="member-name-link"><a href="#recordWriteSuccess(java.net.URI)">recordWriteSuccess</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/net/URI.html" title="class or interface in java.net" class="external-link">URI</a>&nbsp;uri)</code></div>
+<div class="col-last even-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3">
 <div class="block">Called when a response is successfully written to cache.</div>
 </div>
-<div class="col-first even-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code><a href="HttpCache.Stats.html" title="interface in com.github.mizosoft.methanol">HttpCache.Stats</a></code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code><span class="member-name-link"><a href="#snapshot()">snapshot</a></span>()</code></div>
-<div class="col-last even-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3">
+<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code><a href="HttpCache.Stats.html" title="interface in com.github.mizosoft.methanol">HttpCache.Stats</a></code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code><span class="member-name-link"><a href="#snapshot()">snapshot</a></span>()</code></div>
+<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3">
 <div class="block">Returns a <code>Stats</code> snapshot for the recorded statistics for all <code>URIs</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code><a href="HttpCache.Stats.html" title="interface in com.github.mizosoft.methanol">HttpCache.Stats</a></code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code><span class="member-name-link"><a href="#snapshot(java.net.URI)">snapshot</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/net/URI.html" title="class or interface in java.net" class="external-link">URI</a>&nbsp;uri)</code></div>
-<div class="col-last odd-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code><a href="HttpCache.Stats.html" title="interface in com.github.mizosoft.methanol">HttpCache.Stats</a></code></div>
+<div class="col-second even-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3"><code><span class="member-name-link"><a href="#snapshot(java.net.URI)">snapshot</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/net/URI.html" title="class or interface in java.net" class="external-link">URI</a>&nbsp;uri)</code></div>
+<div class="col-last even-row-color method-summary-table-tab2 method-summary-table method-summary-table-tab3">
 <div class="block">Returns a <code>Stats</code> snapshot for the recorded statistics of the given <code>URI</code>.</div>
 </div>
 </div>
@@ -229,13 +236,22 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="createConcurrentRecorder()">
 <h3>createConcurrentRecorder</h3>
 <div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="HttpCache.StatsRecorder.html" title="interface in com.github.mizosoft.methanol">HttpCache.StatsRecorder</a></span>&nbsp;<span class="element-name">createConcurrentRecorder</span>()</div>
-<div class="block">Creates a <code>StatsRecorder</code> that atomically increments each count.
-
- <p>Independence of per-<code>URI</code> stats is dictated by <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/net/URI.html#equals(java.lang.Object)" title="class or interface in java.net" class="external-link"><code>URI.equals(Object)</code></a>. That is,
- stats of <code>https://example.com/a</code> and <code>https://example.com/a?x=y</code> are recorded
- independently as they are not equal, although they have the same host and path.
+<div class="block">Creates a <code>StatsRecorder</code> that atomically increments each count and doesn't record per
+ <code>URI</code> stats.
 
  <p>This is the <code>StatsRecorder</code> used by default.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="createConcurrentPerUriRecorder()">
+<h3>createConcurrentPerUriRecorder</h3>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="HttpCache.StatsRecorder.html" title="interface in com.github.mizosoft.methanol">HttpCache.StatsRecorder</a></span>&nbsp;<span class="element-name">createConcurrentPerUriRecorder</span>()</div>
+<div class="block">Creates a <code>StatsRecorder</code> that atomically increments each count and records per <code>
+ URI</code> stats.
+
+ <p>Independence of per <code>URI</code> stats is dictated by <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/net/URI.html#equals(java.lang.Object)" title="class or interface in java.net" class="external-link"><code>URI.equals(Object)</code></a>. That is,
+ stats of <code>https://example.com/a</code> and <code>https://example.com/a?x=y</code> are recorded
+ independently as the <code>URIs</code> are not equal, although they have the same host and path.</div>
 </section>
 </li>
 <li>
