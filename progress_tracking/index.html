@@ -683,11 +683,11 @@ progress is tracked by registering a <code>Listener</code> with a request's <cod
 <div class="highlight"><pre><span></span><code><span class="kd">final</span> <span class="n">Methanol</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Methanol</span><span class="p">.</span><span class="na">create</span><span class="p">();</span>
 
 <span class="kd">final</span> <span class="n">ProgressTracker</span> <span class="n">tracker</span> <span class="o">=</span> <span class="n">ProgressTracker</span><span class="p">.</span><span class="na">newBuilder</span><span class="p">()</span>
-    <span class="p">.</span><span class="na">timePassedThreshold</span><span class="p">(</span><span class="n">Duration</span><span class="p">.</span><span class="na">ofMillis</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+    <span class="p">.</span><span class="na">bytesTransferredThreshold</span><span class="p">(</span><span class="mi">60</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">)</span> <span class="c1">// 60 kB</span>
     <span class="p">.</span><span class="na">build</span><span class="p">();</span>
 
 <span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">Path</span><span class="o">&gt;</span> <span class="nf">downloadVeryInterestingVideo</span><span class="p">()</span> <span class="kd">throws</span> <span class="n">IOException</span><span class="p">,</span> <span class="n">InterruptedException</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="n">request</span> <span class="o">=</span> <span class="n">MutableReqeust</span><span class="p">.</span><span class="na">GET</span><span class="p">(</span><span class="s">&quot;https://i.imgur.com/NYvl8Sy.mp4&quot;</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="n">request</span> <span class="o">=</span> <span class="n">MutableRequest</span><span class="p">.</span><span class="na">GET</span><span class="p">(</span><span class="s">&quot;https://i.imgur.com/NYvl8Sy.mp4&quot;</span><span class="p">);</span>
 
   <span class="kd">var</span> <span class="n">downloadingBodyHandler</span> <span class="o">=</span> <span class="n">BodyHandlers</span><span class="p">.</span><span class="na">ofFile</span><span class="p">(</span>
       <span class="n">Path</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;interesting-video.mp4&quot;</span><span class="p">),</span> <span class="n">CREATE</span><span class="p">,</span> <span class="n">WRITE</span><span class="p">);</span>
@@ -697,16 +697,17 @@ progress is tracked by registering a <code>Listener</code> with a request's <cod
 <span class="p">}</span>
 
 <span class="kt">void</span> <span class="nf">onProgress</span><span class="p">(</span><span class="n">Progress</span> <span class="n">progress</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">progress</span><span class="p">.</span><span class="na">determinate</span><span class="p">())</span> <span class="p">{</span> <span class="c1">// Overall progress can be measured</span>
+    <span class="kd">var</span> <span class="n">percent</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">progress</span><span class="p">.</span><span class="na">value</span><span class="p">();</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span>
+        <span class="s">&quot;Downloaded %d from %d bytes (%.2f%%)%n&quot;</span><span class="p">,</span> 
+        <span class="n">progress</span><span class="p">.</span><span class="na">totalBytesTransferred</span><span class="p">(),</span> <span class="n">progress</span><span class="p">.</span><span class="na">contentLength</span><span class="p">(),</span> <span class="n">percent</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Downloaded &quot;</span> <span class="o">+</span> <span class="n">progress</span><span class="p">.</span><span class="na">totalBytesTransferred</span><span class="p">());</span>
+  <span class="p">}</span>
+
   <span class="k">if</span> <span class="p">(</span><span class="n">progress</span><span class="p">.</span><span class="na">done</span><span class="p">())</span> <span class="p">{</span>
     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Done!&quot;</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">progress</span><span class="p">.</span><span class="na">determinate</span><span class="p">())</span> <span class="p">{</span> <span class="c1">// Overall progress can be measured</span>
-    <span class="kd">var</span> <span class="n">percent</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">progress</span><span class="p">.</span><span class="na">value</span><span class="p">();</span>
-    <span class="kd">var</span> <span class="n">roundedPercent</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">round</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">percent</span><span class="p">)</span> <span class="o">/</span> <span class="mf">100.0</span><span class="p">;</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span>
-        <span class="s">&quot;Downloaded %d from %d (%d)%n&quot;</span><span class="p">,</span> 
-        <span class="n">progress</span><span class="p">.</span><span class="na">bytesTransferred</span><span class="p">(),</span> <span class="n">progress</span><span class="p">.</span><span class="na">contentLength</span><span class="p">(),</span> <span class="n">roundedPercent</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Downloaded &quot;</span> <span class="o">+</span> <span class="n">progress</span><span class="p">.</span><span class="na">bytesTransferred</span><span class="p">());</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -715,28 +716,29 @@ progress is tracked by registering a <code>Listener</code> with a request's <cod
 <div class="highlight"><pre><span></span><code><span class="kd">final</span> <span class="n">Methanol</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Methanol</span><span class="p">.</span><span class="na">create</span><span class="p">();</span>
 
 <span class="kd">final</span> <span class="n">ProgressTracker</span> <span class="n">tracker</span> <span class="o">=</span> <span class="n">ProgressTracker</span><span class="p">.</span><span class="na">newBuilder</span><span class="p">()</span>
-    <span class="p">.</span><span class="na">timePassedThreshold</span><span class="p">(</span><span class="n">Duration</span><span class="p">.</span><span class="na">ofMillis</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+    <span class="p">.</span><span class="na">bytesTransferredThreshold</span><span class="p">(</span><span class="mi">60</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">)</span> <span class="c1">// 60 kB</span>
     <span class="p">.</span><span class="na">build</span><span class="p">();</span>
 
 <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">upload</span><span class="p">(</span><span class="n">Path</span> <span class="n">file</span><span class="p">,</span> <span class="n">BodyHandler</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">bodyHandler</span><span class="p">)</span>
     <span class="kd">throws</span> <span class="n">IOException</span><span class="p">,</span> <span class="n">InterruptedException</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="n">trackingRequestBody</span> <span class="o">=</span> <span class="n">tracker</span><span class="p">.</span><span class="na">tracking</span><span class="p">(</span><span class="n">BodyPublishers</span><span class="p">.</span><span class="na">ofFile</span><span class="p">(</span><span class="n">file</span><span class="p">),</span> <span class="k">this</span><span class="p">::</span><span class="n">onProgress</span><span class="p">);</span>
-  <span class="kd">var</span> <span class="n">request</span> <span class="o">=</span> <span class="n">MutableReqeust</span><span class="p">.</span><span class="na">POST</span><span class="p">(</span><span class="s">&quot;https://httpbin.org/post&quot;</span><span class="p">,</span> <span class="n">trackingRequestBody</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="n">request</span> <span class="o">=</span> <span class="n">MutableRequest</span><span class="p">.</span><span class="na">POST</span><span class="p">(</span><span class="s">&quot;https://httpbin.org/post&quot;</span><span class="p">,</span> <span class="n">trackingRequestBody</span><span class="p">);</span>
 
   <span class="k">return</span> <span class="n">client</span><span class="p">.</span><span class="na">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">bodyHandler</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="kt">void</span> <span class="nf">onProgress</span><span class="p">(</span><span class="n">Progress</span> <span class="n">progress</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">progress</span><span class="p">.</span><span class="na">determinate</span><span class="p">())</span> <span class="p">{</span> <span class="c1">// Overall progress can be measured</span>
+    <span class="kd">var</span> <span class="n">percent</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">progress</span><span class="p">.</span><span class="na">value</span><span class="p">();</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span>
+        <span class="s">&quot;Downloaded %d from %d bytes (%.2f%%)%n&quot;</span><span class="p">,</span> 
+        <span class="n">progress</span><span class="p">.</span><span class="na">totalBytesTransferred</span><span class="p">(),</span> <span class="n">progress</span><span class="p">.</span><span class="na">contentLength</span><span class="p">(),</span> <span class="n">percent</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Downloaded &quot;</span> <span class="o">+</span> <span class="n">progress</span><span class="p">.</span><span class="na">totalBytesTransferred</span><span class="p">());</span>
+  <span class="p">}</span>
+
   <span class="k">if</span> <span class="p">(</span><span class="n">progress</span><span class="p">.</span><span class="na">done</span><span class="p">())</span> <span class="p">{</span>
     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Done!&quot;</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">if</span> <span class="p">(</span><span class="n">progress</span><span class="p">.</span><span class="na">determinate</span><span class="p">())</span> <span class="p">{</span> <span class="c1">// Overall progress can be measured</span>
-    <span class="kd">var</span> <span class="n">percent</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">progress</span><span class="p">.</span><span class="na">value</span><span class="p">();</span>
-    <span class="kd">var</span> <span class="n">roundedPercent</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">round</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">percent</span><span class="p">)</span> <span class="o">/</span> <span class="mf">100.0</span><span class="p">;</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span>
-        <span class="s">&quot;Uploaded %d from %d (%d)%n&quot;</span><span class="p">,</span> 
-        <span class="n">progress</span><span class="p">.</span><span class="na">bytesTransferred</span><span class="p">(),</span> <span class="n">progress</span><span class="p">.</span><span class="na">contentLength</span><span class="p">(),</span> <span class="n">roundedPercent</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Uploaded &quot;</span> <span class="o">+</span> <span class="n">progress</span><span class="p">.</span><span class="na">bytesTransferred</span><span class="p">());</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
