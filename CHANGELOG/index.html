@@ -570,6 +570,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#version-150" class="md-nav__link">
+    Version 1.5.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#version-141" class="md-nav__link">
     Version 1.4.1
   </a>
@@ -645,6 +652,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#version-150" class="md-nav__link">
+    Version 1.5.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#version-141" class="md-nav__link">
     Version 1.4.1
   </a>
@@ -700,6 +714,55 @@
                 
                 
                 <h1 id="change-log">Change Log<a class="headerlink" href="#change-log" title="Permanent link">&para;</a></h1>
+<h2 id="version-150">Version 1.5.0<a class="headerlink" href="#version-150" title="Permanent link">&para;</a></h2>
+<p><em>14-5-2021</em></p>
+<ul>
+<li>
+<p>Methanol now has an <a href="https://datatracker.ietf.org/doc/html/rfc7234">RFC-compliant</a> HTTP cache! It can store entries on disk or
+  in memory. Give it a try!
+  <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">cache</span><span class="p">()</span> <span class="kd">throws</span> <span class="n">InterruptedException</span><span class="p">,</span> <span class="n">IOException</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="n">cache</span> <span class="o">=</span> <span class="n">HttpCache</span><span class="p">.</span><span class="na">newBuilder</span><span class="p">()</span>
+      <span class="p">.</span><span class="na">cacheOnDisk</span><span class="p">(</span><span class="n">Path</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;cache-dir&quot;</span><span class="p">),</span> <span class="mi">100</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">)</span>
+      <span class="p">.</span><span class="na">build</span><span class="p">();</span>
+  <span class="kd">var</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Methanol</span><span class="p">.</span><span class="na">newBuilder</span><span class="p">()</span>
+      <span class="p">.</span><span class="na">cache</span><span class="p">(</span><span class="n">cache</span><span class="p">)</span>
+      <span class="p">.</span><span class="na">build</span><span class="p">();</span>
+
+  <span class="kd">var</span> <span class="n">request</span> <span class="o">=</span> <span class="n">MutableRequest</span><span class="p">.</span><span class="na">GET</span><span class="p">(</span><span class="s">&quot;https://i.imgur.com/NYvl8Sy.mp4&quot;</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="n">response</span> <span class="o">=</span> <span class="p">(</span><span class="n">CacheAwareResponse</span><span class="o">&lt;</span><span class="n">Path</span><span class="o">&gt;</span><span class="p">)</span> <span class="n">client</span><span class="p">.</span><span class="na">send</span><span class="p">(</span>
+      <span class="n">request</span><span class="p">,</span> <span class="n">BodyHandlers</span><span class="p">.</span><span class="na">ofFile</span><span class="p">(</span><span class="n">Path</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;banana_cat.mp4&quot;</span><span class="p">)));</span>
+
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span>
+      <span class="s">&quot;%s (CacheStatus: %s, elapsed: %s)%n&quot;</span><span class="p">,</span>
+      <span class="n">response</span><span class="p">,</span>
+      <span class="n">response</span><span class="p">.</span><span class="na">cacheStatus</span><span class="p">(),</span>
+      <span class="n">Duration</span><span class="p">.</span><span class="na">between</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="na">timeRequestSent</span><span class="p">(),</span> <span class="n">response</span><span class="p">.</span><span class="na">timeResponseReceived</span><span class="p">()));</span>
+
+  <span class="n">cache</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Added <code>CacheControl</code> to model the <code>Cache-Control</code> header and its directives. This is complementary
+  to the new cache as all configuration is communicated through <code>Cache-Control</code>.</p>
+</li>
+<li>Interceptors have been reworked. The old naming convention is deprecated. An interceptor is now either 
+  a <em>client</em> or a <em>backend</em> interceptor instead of a pre/post decoration interceptor, where 'backend' refers
+  to <code>Methanol</code>'s backing <code>HttpClient</code>. The cache intercepts requests after client but before backend
+  interceptors. It was tempting to name the latter 'network interceptors', but that seemed rather confusing
+  as not all 'network' requests can be intercepted (<code>HttpClient</code> can make its own intermediate requests
+  like redirects &amp; retries).</li>
+<li>Added <code>HttpStats</code>, which contains functions for checking response codes.</li>
+<li>Added <code>ForwardingEncoder</code> &amp; <code>ForwardingDecoder</code>. These are meant for easier installation of adapters
+  from the classpath.</li>
+<li><code>System.Logger</code> API is now used instead of <code>java.util.logging</code>.</li>
+<li>Fix: Don't attempt to decompress responses to HEADs. This fixed failures like <code>unexpected end of gzip stream</code>.</li>
+<li>Fix: Decompressed responses now have their stale <code>Content-Encoding</code> &amp; <code>Content-Length</code> headers removed.  </li>
+<li>Changed reactor dependency to API scope in the <code>methanol-jackson-flux</code> adapter.</li>
+<li>Upgraded <a href="https://github.com/FasterXML/jackson-databind/blob/f67f2a194651609deeffc4dba868bb767c067c57/release-notes/VERSION-2.x#L52">Jackson to 2.12.3</a>.</li>
+<li>Upgraded <a href="https://github.com/reactor/reactor-core/releases/tag/v3.4.6">Reactor to 3.4.6</a>.</li>
+<li>New <a href="https://mizosoft.github.io/methanol">project website</a>!</li>
+</ul>
 <h2 id="version-141">Version 1.4.1<a class="headerlink" href="#version-141" title="Permanent link">&para;</a></h2>
 <p><em>26-9-2020</em></p>
 <ul>
